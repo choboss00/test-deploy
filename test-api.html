@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GET Request Example</title>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  fetch('http://3.34.57.226:8080/api/banners/main')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+    })
+    .catch(error => console.error('Error:', error));
+});
+</script>
+</head>
+<body>
+<h1>GET Request Result</h1>
+<pre id="result"></pre>
+</body>
+</html>
